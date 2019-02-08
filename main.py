@@ -19,7 +19,7 @@ raw_dataset = pd.read_csv(dataset_path, names=column_names, na_values="?", comme
 dataset = raw_dataset.copy();
 
 # printing the dataset
-# print(dataset.tail());
+print(dataset.tail());
 
 # cleaning the data
 dataset = dataset.dropna();
@@ -147,7 +147,7 @@ print()
 
 # use test set to see how well the model generalizes.
 loss, meanAbsoluteError, meanSquaredError = model.evaluate(normTestingData, test_labels, verbose = 0)
-print("Testing set mean absolute error: {:5.2f} MPG".format(meanAbsoluteError))
+#print("Testing set mean absolute error: {:5.2f} MPG".format(meanAbsoluteError))
 
 predictions = model.predict(normTestingData).flatten()
 plt.scatter(test_labels, predictions)
